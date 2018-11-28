@@ -1,5 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import ManagerPhoto from './ManagerPhoto';
 
 export class Page extends React.Component {
   onBtnClick = e => {
@@ -29,14 +30,15 @@ export class Page extends React.Component {
     if (isFetching) {
       return <p>Загрузка...</p>
     } else {
-      return photos.map((entry, index) => ( 
-        <div key={entry.id} className="photo">
-          <p>
-            <img src={entry.sizes[0].url} alt="" />
-          </p>
-          <p>{entry.likes.count} ❤</p>
-        </div>
-      ))
+      return <ManagerPhoto photos={photos} />
+      // return photos.map((entry, index) => ( 
+      //   <div key={entry.id} className="photo">
+      //     <p>
+      //       <img src={entry.sizes[0].url} alt="" />
+      //     </p>
+      //     <p>{entry.likes.count} ❤</p>
+      //   </div>
+      // ))
     }
   }
 
